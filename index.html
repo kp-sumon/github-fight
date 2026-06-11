@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Fight ⚔️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        :root { --primary: #22d3ee; }
+        .dark { --primary: #67e8f9; }
+        .glass { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); }
+        .trophy { animation: trophyWin 2s infinite alternate; }
+        @keyframes trophyWin {
+            from { transform: scale(1) rotate(-8deg); }
+            to { transform: scale(1.15) rotate(8deg); }
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen font-sans">
+    <div class="max-w-7xl mx-auto p-6">
+        <header class="flex justify-between items-center mb-10">
+            <div class="flex items-center gap-4">
+                <div class="text-5xl">⚔️</div>
+                <h1 class="text-4xl font-bold tracking-tighter">GitHub Fight</h1>
+            </div>
+            <div class="flex items-center gap-6">
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" id="saver" class="w-5 h-5 accent-cyan-400" onchange="toggleSaver()">
+                    <span class="text-sm">Data Saver</span>
+                </label>
+                <button onclick="toggleTheme()" class="text-2xl">🌙</button>
+            </div>
+        </header>
+
+        <!-- Input Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
+            <div>
+                <input id="user1" placeholder="প্রথম ডেভেলপার (username)" 
+                       class="w-full bg-zinc-900 border border-zinc-700 rounded-3xl px-6 py-5 text-lg focus:border-cyan-400 outline-none">
+            </div>
+            <div>
+                <input id="user2" placeholder="দ্বিতীয় ডেভেলপার (username)" 
+                       class="w-full bg-zinc-900 border border-zinc-700 rounded-3xl px-6 py-5 text-lg focus:border-cyan-400 outline-none">
+            </div>
+        </div>
+
+        <div class="text-center mb-8">
+            <button onclick="startFight()" 
+                    class="bg-gradient-to-r from-cyan-400 to-violet-500 text-zinc-950 font-bold text-xl px-12 py-5 rounded-3xl hover:scale-105 transition-all flex items-center gap-3 mx-auto">
+                <i class="fa-solid fa-swords"></i> FIGHT!
+            </button>
+        </div>
+
+        <!-- Result Area -->
+        <div id="result" class="hidden grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Left Player -->
+            <div id="player1" class="glass border border-zinc-700 rounded-3xl p-8"></div>
+            <!-- Right Player -->
+            <div id="player2" class="glass border border-zinc-700 rounded-3xl p-8"></div>
+        </div>
+
+        <!-- Winner Announcement -->
+        <div id="winner" class="hidden text-center mt-12"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
