@@ -11,7 +11,7 @@
 
 **Tech Stack**: HTML5, CSS3, Vanilla JavaScript, GitHub REST API, Tailwind CSS
 
-**লাইভ ডেমো**: [GitHub Pages লিংক দাও]
+**লাইভ ডেমো:** [এখানে ক্লিক করুন](https://kp-sumon.github.io/github-fight/)
 
 ---
 
